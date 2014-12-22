@@ -47,7 +47,7 @@ isPrimePure 2 _  = True
 isPrimePure 3 _  = True
 isPrimePure _ [] = False -- should not be true or false 
 isPrimePure can wit = let primes = [3,5,7,11,13,17,19,23,29,31] in 
-                   all (\ p -> (can `mod` p) /= 0) primes
+                   all (\ p -> p >= can || (can `mod` p) /= 0) primes
                 && foldr ((&&) . millerRabin can) True wit
 --------------------------------------------------------------------------------
 -- the longer is the randomList, the higher is the accuracy of the test

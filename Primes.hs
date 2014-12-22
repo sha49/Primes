@@ -44,7 +44,6 @@ millerRabin n a = let fact = twoPowersFact (n-1);
 isPrimePure :: (Eq a, Integral a) => a -> [a] -> Bool 
 isPrimePure 1 _  = False
 isPrimePure 2 _  = True
-isPrimePure 3 _  = True
 isPrimePure _ [] = False -- should not be true or false 
 isPrimePure can wit = let primes = [3,5,7,11,13,17,19,23,29,31] in 
                    all (\ p -> p >= can || (can `mod` p) /= 0) primes

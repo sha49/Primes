@@ -42,6 +42,7 @@ millerRabin n a = let fact = twoPowersFact (n-1);
 --------------------------------------------------------------------------------
 -- isPrimePure possiblePrime [list of testBases]
 isPrimePure :: (Eq a, Integral a) => a -> [a] -> Bool 
+isPrimePure 1 _  = False
 isPrimePure 2 _  = True
 isPrimePure 3 _  = True
 isPrimePure _ [] = False -- should not be true or false 
